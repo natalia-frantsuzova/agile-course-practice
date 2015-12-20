@@ -1,4 +1,4 @@
-package ru.unn.agile.tddkata;
+package ru.unn.agile.SupplyDemand;
 
 public class StringCalculator {
     public int add(final String input) {

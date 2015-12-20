@@ -1,4 +1,4 @@
-package ru.unn.agile.tddkata;
+package ru.unn.agile.SupplyDemand;
 
 import org.junit.Before;
 import org.junit.Test;
