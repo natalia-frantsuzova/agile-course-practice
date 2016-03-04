@@ -50,10 +50,6 @@ project(":code/kornyakov-kirill-lab3/Infrastructure").name = "kornyakov-kirill-l
 // Esyagin Ivan
 // Filicheva Svetlana
 // Francuzova Natalya
-include "code/frantsuzova-natalia/View"
-project(":code/frantsuzova-natalia/View").name = "frantsuzova-natalia-View"
-include "code/frantsuzova-natalia/Model"
-project(":code/frantsuzova-natalia/Model").name = "frantsuzova-natalia-Model"
 // Ganin Aleksej
 // Garina Anastasiya
 // Gatchenko Viktor
