@@ -51,7 +51,7 @@ project(":code/kornyakov-kirill-lab3/Infrastructure").name = "kornyakov-kirill-l
 // Filicheva Svetlana
 // Francuzova Natalya
 include "code/frantsuzova-natalia/Model"
-project(":code/frantsuzova-natalia/Model/src").name = "frantsuzova-natalia-Model"
+project(":code/frantsuzova-natalia/Model").name = "frantsuzova-natalia-Model"
 include "code/frantsuzova-natalia/ViewModel"
 project(":code/frantsuzova-natalia/ViewModel").name = "frantsuzova-natalia-ViewModel"
 include "code/frantsuzova-natalia/View"
