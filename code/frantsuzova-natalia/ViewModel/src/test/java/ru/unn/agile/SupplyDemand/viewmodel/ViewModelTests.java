@@ -1,10 +1,10 @@
-package ru.unn.agile.ComplexNumber.viewmodel.legacy;
+package ru.unn.agile.SupplyDemand.viewmodel;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ru.unn.agile.ComplexNumber.viewmodel.legacy.ViewModel.Operation;
-import ru.unn.agile.ComplexNumber.viewmodel.legacy.ViewModel.Status;
+//import ru.unn.agile.SupplyDemand.viewmodel.ViewModel.Operation;
+import ru.unn.agile.SupplyDemand.viewmodel.ViewModel.Status;
 
 import static org.junit.Assert.*;
 

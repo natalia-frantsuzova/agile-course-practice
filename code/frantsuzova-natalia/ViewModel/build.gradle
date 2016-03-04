@@ -1,5 +1,5 @@
 dependencies {
-    compile project(':kornyakov-kirill-lab2-Model-legacy')
+    compile project(':frantsuzova-natalia-Model')
 }
 
 sourceSets {

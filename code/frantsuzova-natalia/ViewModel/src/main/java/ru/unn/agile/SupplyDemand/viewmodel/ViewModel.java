@@ -1,6 +1,7 @@
 package ru.unn.agile.SupplyDemand.viewmodel;
 
-import ru.unn.agile.SupplyDemand.model;
+import com.sun.corba.se.spi.orb.Operation;
+import ru.unn.agile.SupplyDemand.viewmodel.ViewModel;
 
 public class ViewModel {
     private String q1;
@@ -79,19 +80,19 @@ public class ViewModel {
         if (!parseInput()) {
             return;
         }
-        SupplyDemandModel a = new SupplyDemandModel();
-        a.DemandElasticity(q1,q2,I1,I2)
+        ViewModel a = new ViewModel();
+        //result.SupplyDemand= (q1,q2,I1,I2);
         result = a.toString();
         status = Status.SUCCESS;
     }
 
-    public Operation getOperation() {
-        return operation;
-    }
+    //public Operation getOperation() {
+    //    return operation;
+    //}
 
-    public void setOperation(final Operation operation) {
-            this.operation = operation;
-    }
+    //public void setOperation(final Operation operation) {
+     //       this.operation = operation;
+    //}
 
     public String getResult() {
         return result;

@@ -1,6 +1,6 @@
-package ru.unn.agile.ComplexNumber.view;
+package ru.unn.agile.SupplyDemand.view;
 
-import ru.unn.agile.ComplexNumber.viewmodel.legacy.ViewModel;
+import ru.unn.agile.SupplyDemand.viewmodel.ViewModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
