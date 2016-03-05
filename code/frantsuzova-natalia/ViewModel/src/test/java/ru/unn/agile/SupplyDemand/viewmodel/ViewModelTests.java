@@ -3,7 +3,6 @@ package ru.unn.agile.SupplyDemand.viewmodel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-//import ru.unn.agile.SupplyDemand.viewmodel.ViewModel.Operation;
 import ru.unn.agile.SupplyDemand.viewmodel.ViewModel.Status;
 
 import static org.junit.Assert.*;
@@ -183,4 +182,67 @@ public class ViewModelTests {
 
         assertEquals("9", viewModel.getResult());
     }
+
+     @Test 
+     public void operationTypeIsMentionedInTheLog() { 
+         setInputData(); 
+ 
+         viewModel.calculate(); 
+ 
+         String message = viewModel.getLog().get(0); 
+         assertTrue(message.matches(".*Add.*")); 
+     } 
+ 
+     @Test 
+     public void canPutSeveralLogMessages() { 
+         setInputData(); 
+  
+         viewModel.calculate(); 
+         viewModel.calculate(); 
+         viewModel.calculate(); 
+  
+         assertEquals(3, viewModel.getLog().size()); 
+     } 
+ 
+ 
+     @Test 
+     public void canSeeOperationChangeInLog() { 
+         setInputData(); 
+ 
+         viewModel.onOperationChanged(Operation.ADD, Operation.MULTIPLY); 
+  
+         String message = viewModel.getLog().get(0); 
+         assertTrue(message.matches(".*" + LogMessages.OPERATION_WAS_CHANGED + "Mul.*")); 
+     } 
+ 
+ 
+     @Test 
+     public void operationIsNotLoggedIfNotChanged() { 
+         viewModel.onOperationChanged(Operation.ADD, Operation.MULTIPLY); 
+  
+         viewModel.onOperationChanged(Operation.MULTIPLY, Operation.MULTIPLY); 
+  
+         assertEquals(1, viewModel.getLog().size()); 
+     } 
+ 
+ 
+     @Test 
+     public void calculateIsNotCalledWhenButtonIsDisabled() { 
+         viewModel.calculate(); 
+  
+         assertTrue(viewModel.getLog().isEmpty()); 
+     }
+
+     @Test 
+     public void isMessageCorrectWhenCalculate() { 
+         viewModel.setq1("1.2");
+         viewModel.setI1("2.3");
+         viewModel.setq2("-2.4");
+         viewModel.setI2("-4.6");
+ 
+         viewModel.calculate();
+ 
+         List<String> log = viewModel.getLog(); 
+         assertEquals("9", viewModel.getResult());
+     } 
 }

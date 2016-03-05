@@ -27,6 +27,7 @@ public class TxtLoggerTests {
         assertNotNull(txtLogger);
     }
 
+
     @Test
     public void canCreateLogFileOnDisk() {
         try {
@@ -35,6 +36,14 @@ public class TxtLoggerTests {
             fail("File " + FILENAME + " wasn't found!");
         }
     }
+
+
+     @Test 
+     public void isLogEmptyByDefault() { 
+         List<String> log = txtLogger.getLog(); 
+         assertEquals(0, log.size()); 
+     } 
+
 
     @Test
     public void canWriteLogMessage() {
@@ -45,6 +54,20 @@ public class TxtLoggerTests {
         String message = txtLogger.getLog().get(0);
         assertThat(message, matchesPattern(".*" + testMessage + "$"));
     }
+
+
+     @Test 
+     public void isLogMessageCorrect() { 
+         String rightMessage = "Some interesting message"; 
+ 
+ 
+         txtLogger.addMessage(rightMessage); 
+ 
+ 
+         String actualMessage = txtLogger.getLog().get(0); 
+         assertThat(actualMessage, containsString(rightMessage)); 
+     } 
+
 
     @Test
     public void canWriteSeveralLogMessage() {
@@ -59,6 +82,22 @@ public class TxtLoggerTests {
         }
     }
 
+
+     @Test 
+     public void areSeveralMessagesCorrect() { 
+         final int numberOfMessages = 5; 
+ 
+ 
+         String[] rightMessages = addSeveralMessages(numberOfMessages); 
+ 
+ 
+         List<String> actualMessages = txtLogger.getLog(); 
+         for (int i = 0; i < numberOfMessages; i++) { 
+             assertThat(actualMessages.get(i), containsString(rightMessages[i])); 
+         } 
+     } 
+
+
     @Test
     public void doesLogContainDateAndTime() {
         String testMessage = "Test message";
@@ -68,4 +107,18 @@ public class TxtLoggerTests {
         String message = txtLogger.getLog().get(0);
         assertThat(message, matchesPattern("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} > .*"));
     }
+
+
+    private String[] addSeveralMessages(final int numberOfMessages) { 
+        String[] rightMessages = new String[numberOfMessages]; 
+ 
+ 
+        for (int i = 0; i < numberOfMessages; i++) { 
+             rightMessages[i] = "Message ¹" + i; 
+             txtLogger.addMessage(rightMessages[i]); 
+         } 
+ 
+ 
+         return rightMessages; 
+     } 
 }

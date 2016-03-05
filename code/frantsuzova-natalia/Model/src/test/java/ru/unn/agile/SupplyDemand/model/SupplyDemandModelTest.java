@@ -29,17 +29,17 @@ public class SupplyDemandModelTest {
     @Test
     public void PrintDemandFactors()
     {
-       // String expectation ="";
-       // String result=PrintDemandFactors();
-       // assertEquals(expectation, result);
+       String expectation ="";
+       String result=PrintDemandFactors();
+       assertEquals(expectation, result);
     }
 
     @Test
     public void PrintSupplyFactors()
     {
-       // String expectation ="";
-       // String result=PrintSupplyFactors();
-       // assertEquals(expectation, result);
+       String expectation ="";
+       String result=PrintSupplyFactors();
+       assertEquals(expectation, result);
     }
 
     @Test
@@ -47,6 +47,7 @@ public class SupplyDemandModelTest {
     {
 
     }
+
     @Test(expected = ArithmeticException.class)
     public void DemandElasticityZeroDivisionTest()
     {
@@ -63,15 +64,17 @@ public class SupplyDemandModelTest {
     @Test
     public void SupplyElasticity()
     {
-
+	assertEquals(0.5, supplyDemand.SupplyElasticity(2,4), DELTA);
 
     }
+
     @Test
 
     public void SupplyElasticityZeroDivisionTest()
     {
         supplyDemand.SupplyElasticity(100, 10);
     }
+
     @Test
     public void SupplyElasticityTest()
     {
